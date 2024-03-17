@@ -33,12 +33,18 @@ const game = () => {
         // Computer's Turn
         let computerNumber = Math.floor(Math.random() * 3);
         let computerChoice = computerOptions[computerNumber];
-        // Calling a check function
-        checkWinner(this.innerHTML, computerChoice);
 
-        // Changing the pictures
-        playerHand.src = `assets/${this.innerHTML}.png`;
-        computerHand.src = `assets/${computerChoice}.png`;
+        document.querySelector(".player-hand").style.animation = "shakePlayer 1s ease-in-out";
+        document.querySelector(".computer-hand").style.animation = "shakeComputer 1s ease-in-out";
+        setTimeout(() => {
+          // Calling a check function
+          checkWinner(this.innerHTML, computerChoice);
+          // Changing the pictures
+          playerHand.src = `assets/${this.innerHTML}.png`;
+          computerHand.src = `assets/${computerChoice}.png`;
+          document.querySelector(".player-hand").style.animation = "";
+          document.querySelector(".computer-hand").style.animation = "";
+        }, 1000);
       });
     });
   };
@@ -80,12 +86,24 @@ const game = () => {
     if (cScore == 10) {
       pScore = 0;
       cScore = 0;
-      alert("Computer Wins The Whole Game");
+      // alert("Computer Wins The Whole Game")
+      document.querySelector(".computerWins").style.zIndex = "1"
+      let computerWins = document.querySelector(".computerWins button");
+      computerWins.addEventListener("click", () => {
+        location.reload();
+      })
+
     }
     else if (pScore == 10) {
       pScore = 0;
       cScore = 0;
-      alert("Bhai Jeet Gaiye Party Kab de Raha hai");
+      // alert("Bhai Jeet Gaiye Party Kab de Raha hai");
+      document.querySelector(".playerWins").style.zIndex = "1"
+      let playerWins = document.querySelector(".playerWins button");
+      playerWins.addEventListener("click", () => {
+        location.reload();
+      })
+
     }
     else {
       return 0;
@@ -97,4 +115,6 @@ const game = () => {
   startGame();
 };
 // starting the game
+
 game();
+

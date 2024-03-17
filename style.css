@@ -167,6 +167,32 @@ div.fadeIn {
     }
 }
 
+@keyframes rgbLightEffectBack {
+    0% {
+        background-color: red;
+    }
+
+    20% {
+        background-color: yellow;
+    }
+
+    40% {
+        background-color: rgb(0, 255, 17);
+    }
+
+    60% {
+        background-color: rgb(0, 234, 255);
+    }
+
+    80% {
+        background-color: rgb(255, 0, 221);
+    }
+
+    100% {
+        background-color: rgb(255, 0, 0);
+    }
+}
+
 @keyframes shakePlayer {
     0% {
         transform: rotateY(180deg) translateY(0px);
@@ -227,4 +253,45 @@ div.fadeIn {
         transform: translateY(0px);
     }
 
+}
+
+div.alertBox {
+    position: absolute;
+    z-index: 2;
+    top: 40%;
+    left: 40%;
+}
+
+.playerWins,
+.computerWins {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    animation: rgbLightEffect 3s infinite;
+    background-color: #000000;
+    top: 163px;
+    left: 368px;
+    height: 300px;
+    width: 810px;
+    font-size: 40px;
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.playerWins button,
+.computerWins button {
+    height: 70px;
+    width: 300px;
+    margin-bottom: 30px;
+    font-size: 50px;
+    font-family: "Rubik";
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(0, 255, 251);
+    color: rgb(255, 0, 0);
+    font-weight: 600;
+    cursor: pointer;
 }
