@@ -115,6 +115,7 @@ const game = () => {
   startGame();
 };
 // starting the game
-
+let playerName = prompt("Enter your name: ");
+document.querySelector(".player-score h2").innerHTML = playerName;
 game();
 
