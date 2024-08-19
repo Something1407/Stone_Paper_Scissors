@@ -262,6 +262,7 @@ div.alertBox {
     left: 40%;
 }
 
+
 .playerWins,
 .computerWins {
     display: flex;
@@ -280,6 +281,8 @@ div.alertBox {
     border-radius: 20px;
     z-index: -1;
 }
+
+
 
 .playerWins button,
 .computerWins button {
